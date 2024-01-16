@@ -1,0 +1,54 @@
+footer {
+  background-color: #3c3c3b;
+  padding: 10px;
+  color: #fff;
+}
+footer h1 {
+  margin-bottom: 30px;
+  color: #fff;
+  font-weight: 800;
+}
+footer .img {
+  background-color: #0c2a4d;
+  padding: 15px 20px;
+  border-radius: 5px;
+}
+footer .img i {
+  font-size: 20px;
+  margin: 5px;
+}
+footer .img span {
+  margin-top: 5px;
+}
+footer p {
+  font-size: 14px;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+footer h2 {
+  margin-bottom: 20px;
+  color: #fff;
+}
+footer li {
+  margin-bottom: 10px;
+  color: #fff;
+}
+.media li {
+  font-size: 1.3rem;
+}
+
+.media img {
+  width: 30px;
+  height: 30px;
+  margin: 0 5px;
+}
+
+.pay img{
+  display: inline;
+  margin: 5px
+}
+
+.box p{
+  margin: 10px 0 ;
+}
+
