@@ -1,3 +1,7 @@
+.position-static{
+  position:static !important;
+}
+
 .shop .category {
   padding: 30px;
   height: 90vh;
