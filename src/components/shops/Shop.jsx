@@ -15,7 +15,8 @@ const Shop = ({
 }) => {
   return (
     <>
-      <ShopCarousel />
+    <div style={{ background: "#fff", width: 400 }}><ShopCarousel /></div>
+      
       <section className="shop background">
         <div className="container d_flex">
           <div className="contentWidth">
@@ -48,7 +49,11 @@ const Shop = ({
 export default Shop;
 
 const ShopCarousel = () => {
-  const list = [1, 2, 3, 4, 5, 6, 7, 8];
+  const list = [
+    "./images/shops/shops-1.png",
+    "./images/shops/shops-2.png",
+    "./images/shops/shops-3.png",
+  ];
 
   const CustomDot = ({ onClick, ...rest }) => {
     const {
@@ -65,8 +70,18 @@ const ShopCarousel = () => {
       <Button
         variant={active ? "contained" : "outlined"}
         onClick={() => onClick()}
+        sx={{ width: 100, height: 100, mx: 1 }}
       >
-        {item}
+        <img
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+          }}
+          alt={"item carousel"}
+          src={item}
+          draggable={false}
+        />
       </Button>
     );
   };
@@ -96,8 +111,17 @@ const ShopCarousel = () => {
     >
       {list.map((item, i) => {
         return (
-          <div key={`sc-${i}`} style={{ background: "skyblue", height: 300 }}>
-            Item {item}
+          <div key={`sc-${i}`} style={{ background: "#fff", height: 500 }}>
+            <img
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "contain",
+              }}
+              alt={"item carousel"}
+              src={item}
+              draggable={false}
+            />
           </div>
         );
       })}
