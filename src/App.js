@@ -12,14 +12,14 @@ import { HashRouter } from "react-router-dom/cjs/react-router-dom.min";
 function App() {
   /*
   step1 :  const { productItems } = Data 
-  lai pass garne using props
+  using props
   
-  Step 2 : item lai cart ma halne using useState
-  ==> CartItem lai pass garre using props from  <Cart CartItem={CartItem} /> ani import garrxa in cartItem ma
+  Step 2 : item cart using useState
+  ==> CartItem lai pass garre using props from  <Cart CartItem={CartItem} /> import in cartItem
  
-  Step 3 :  chai flashCard ma xa button ma
+  Step 3 : flashCard button
 
-  Step 4 :  addToCart lai chai pass garne using props in pages and cart components
+  Step 4 :  addToCart pass using props in pages and cart components
   */
 
   //Step 1 :
@@ -32,11 +32,10 @@ function App() {
 
   //Step 4 :
   const addToCart = (product) => {
-    // if hamro product alredy cart xa bhane  find garna help garxa
+    // if product already cart
     const productExit = CartItem.find((item) => item.id === product.id);
-    // if productExit chai alredy exit in cart then will run fun() => setCartItem
-    // ani inside => setCartItem will run => map() ani yo map() chai each cart ma
-    // gayara check garxa if item.id ra product.id chai match bhayo bhane
+    // if productExit already exit in cart then will run fun() => setCartItem
+    // any inside => setCartItem will run => map() each cart
     // productExit product chai display garxa
     // ani increase  exits product QTY by 1
     // if item and product doesnt match then will add new items

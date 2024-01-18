@@ -2,6 +2,7 @@ import React, { useEffect, useLayoutEffect, useState } from "react";
 
 import adidas from "../../components/assets/images/adidas.png";
 
+
 const ShopCart = ({
   shopItems,
   cartItems,

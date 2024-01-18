@@ -4,6 +4,9 @@ import TopCate from "../components/top/TopCate";
 import NewArrivals from "../components/newarrivals/NewArrivals";
 import Discount from "../components/discount/Discount";
 import Shop from "../components/shops/Shop";
+import SlideCard from "../components/MainPage/SlideCard";
+import SliderHome from "../components/MainPage/Slider";
+import adidas from "../components/assets/images/adidas.png";
 
 const Pages = ({
   productItems,
@@ -18,6 +21,7 @@ const Pages = ({
     <>
       <NewArrivals />
       <Discount />
+      <SliderHome />
       <Shop
         shopItems={shopItems}
         cartItems={cartItems}

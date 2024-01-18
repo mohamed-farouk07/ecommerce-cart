@@ -3,6 +3,7 @@ import ShopCart from "./ShopCart";
 import "./style.css";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import adidas from "../../components/assets/images/adidas.png";
 import { Button } from "@mui/material";
 
 const Shop = ({
@@ -15,7 +16,7 @@ const Shop = ({
 }) => {
   return (
     <>
-    <div style={{ background: "#fff", width: 400 }}><ShopCarousel /></div>
+    <div style={{ background: "#fff", width: "50%" }}><ShopCarousel /></div>
       
       <section className="shop background">
         <div className="container d_flex">
@@ -50,9 +51,9 @@ export default Shop;
 
 const ShopCarousel = () => {
   const list = [
-    "./images/shops/shops-1.png",
-    "./images/shops/shops-2.png",
-    "./images/shops/shops-3.png",
+    "./images/arrivals/arrivals1.png",
+    "./images/arrivals/arrivals2.png",
+    "./images/arrivals/arrivals3.png",
   ];
 
   const CustomDot = ({ onClick, ...rest }) => {
@@ -87,7 +88,7 @@ const ShopCarousel = () => {
   };
 
   return (
-    <Carousel
+    <Carousel className="grid2"
       swipeable={true}
       draggable={true}
       showDots={true}
@@ -125,6 +126,9 @@ const ShopCarousel = () => {
           </div>
         );
       })}
+      
     </Carousel>
+    
   );
+
 };
