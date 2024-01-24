@@ -7,7 +7,7 @@ import Breadcrumbs from "./BreadCrumbs";
 const Header = ({ CartItem, addToCart, decreaseQty, FavItem, toggleFav }) => {
   return (
     <>
-      {/* <Head /> */}
+      <Head />
       <Search
         CartItem={CartItem}
         addToCart={addToCart}
