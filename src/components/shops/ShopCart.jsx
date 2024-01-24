@@ -2,7 +2,6 @@ import React, { useEffect, useLayoutEffect, useState } from "react";
 
 import adidas from "../../components/assets/images/adidas.png";
 
-
 const ShopCart = ({
   shopItems,
   cartItems,
@@ -10,6 +9,7 @@ const ShopCart = ({
   remFromCart,
   FavItem,
   toggleFav,
+  onItemSelect,
 }) => {
   return (
     <>
@@ -17,7 +17,15 @@ const ShopCart = ({
         return (
           <ShopItem
             key={`sci-${index}`}
-            {...{ item, cartItems, addToCart, remFromCart, FavItem, toggleFav }}
+            {...{
+              item,
+              cartItems,
+              addToCart,
+              remFromCart,
+              FavItem,
+              toggleFav,
+              onItemSelect,
+            }}
           />
         );
       })}
@@ -34,6 +42,7 @@ const ShopItem = ({
   remFromCart,
   FavItem,
   toggleFav,
+  onItemSelect,
 }) => {
   const [fav, setfav] = useState(false);
   const [cartCount, cartCounts] = useState(0);
@@ -58,7 +67,11 @@ const ShopItem = ({
 
   return (
     <div className="box">
-      <div className="product mtop">
+      <div
+        className="product mtop"
+        style={{ cursor: "pointer" }}
+        onClick={() => onItemSelect(item)}
+      >
         <div className="img">
           <span className="discount">{item.discount}% Off</span>
           <img src={item.cover} alt="" />
@@ -71,12 +84,29 @@ const ShopItem = ({
           </div>
         </div>
         <div className="product-details">
-          <h3 style={{fontSize:"1.4rem", fontWeight:"bold",textAlign:"center"}}>{item.name}</h3>
+          <h3
+            style={{
+              fontSize: "1.4rem",
+              fontWeight: "bold",
+              textAlign: "center",
+            }}
+          >
+            {item.name}
+          </h3>
           <div className="price">
-            <h4 style={{color:"#542E90", fontSize:"1.2rem",textAlign:"start", padding:"auto 0"}}>${item.price}.00 </h4>
+            <h4
+              style={{
+                color: "#542E90",
+                fontSize: "1.2rem",
+                textAlign: "start",
+                padding: "auto 0",
+              }}
+            >
+              ${item.price}.00{" "}
+            </h4>
             <div className="logo width ">
-            <img src={adidas} alt="" />
-          </div>
+              <img src={adidas} alt="" />
+            </div>
           </div>
           <div className="rate">
             <i className="fa fa-star"></i>
@@ -84,10 +114,10 @@ const ShopItem = ({
             <i className="fa fa-star"></i>
             <i className="fa fa-star"></i>
             <i className="fa fa-star"></i>
-            <span style={{margin:"0 20px"}}>5 of 5</span>
+            <span style={{ margin: "0 20px" }}>5 of 5</span>
           </div>
           <div className="price">
-            <div style={{textAlign:"end"}}>
+            <div style={{ textAlign: "end" }}>
               <button onClick={() => addToCart(item)}>
                 <i className="fa fa-plus"></i>
               </button>

@@ -21,7 +21,7 @@ const Pages = ({
     <>
       <NewArrivals />
       <Discount />
-      <SliderHome />
+      {/* <SliderHome /> */}
       <Shop
         shopItems={shopItems}
         cartItems={cartItems}
